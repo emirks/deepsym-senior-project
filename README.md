@@ -40,9 +40,13 @@ research into a comprehensive form, aiming for the esteemed recognition of a con
 paper. In essence, these objectives serve as the project’s compass, guiding it through both 
 uncharted territories and established landscapes.
 In short, the project sets out to:
+
 • Implement and enhance the DeepSym method.
+
 • Conduct experiments in the Minecraft environment using platforms like 
 Malmo [2] or MineRL [3].
+
 • Modify and experiment with various network architectures to identify 
 emerging symbols.
+
 • Achieve results worthy of being transformed into a conference paper.
