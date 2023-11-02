@@ -42,7 +42,7 @@ ae = AE(args)
 architectures = {'AE':  ae,
                  'VAE': vae}
 
-print(args.model)
+print("Model: ", args.model)
 if __name__ == "__main__":
     try:
         os.stat(args.results_path)
@@ -59,6 +59,7 @@ if __name__ == "__main__":
         sys.exit()
 
     try:
+        print("Device: ", autoenc.device)
         for epoch in range(1, args.epochs + 1):
             autoenc.train(epoch)
             autoenc.test(epoch)
@@ -87,4 +88,9 @@ if __name__ == "__main__":
         interpolations = ndimage.zoom(interpolations, 5, order=1)
         interpolations *= 256
         imageio.mimsave('{}/animation_{}_{}.gif'.format(args.results_path, args.model, args.dataset), interpolations.astype(np.uint8))
+"""
+
+
+"""
+    python train.py --batch-size 128 --epochs 4 --model AE --seed 42 --log-interval 500 --embedding-size 512 --dataset CRAFTER
 """
