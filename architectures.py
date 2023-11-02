@@ -48,12 +48,12 @@ class CNN_Encoder(nn.Module):
             nn.Conv2d(self.channel_mult*4, self.channel_mult*8, 3, 2, 1), # (B, 128, 8, 8)
             nn.BatchNorm2d(self.channel_mult*8),
             nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(self.channel_mult*8, self.channel_mult*16, 3, 2, 1), # (B, 256, 4, 4)
-            nn.BatchNorm2d(self.channel_mult*16),
-            nn.LeakyReLU(0.2, inplace=True)
+            # nn.Conv2d(self.channel_mult*8, self.channel_mult*16, 3, 2, 1), # (B, 256, 4, 4)
+            # nn.BatchNorm2d(self.channel_mult*16),
+            # nn.LeakyReLU(0.2, inplace=True)
         )
 
-        self.flat_fts = self.get_flat_fts(self.conv) # (B, 256*4*4)
+        self.flat_fts = self.get_flat_fts(self.conv) # (B, 256*8*8)
 
         self.linear = nn.Sequential(
             nn.Linear(self.flat_fts, output_size), # (B, output_size)  The input has become a one dimensional embedded vector 
@@ -78,7 +78,7 @@ class CNN_Decoder(nn.Module):
         self.input_dim = embedding_size
         self.channel_mult = 16
         self.output_channels = 3
-        self.fc_output_dim = 512
+        self.fc_output_dim = 128
 
         self.fc = nn.Sequential(
             nn.Linear(self.input_dim, self.fc_output_dim), # (B, 512)
