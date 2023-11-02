@@ -45,7 +45,7 @@ class AE(object):
 
         self.model = Network(args)
         self.model.to(self.device)
-        self.optimizer = optim.Adam(self.model.parameters(), lr=1e-3)
+        self.optimizer = optim.Adam(self.model.parameters(), lr=3e-4)
         self.best_loss = float('inf')
         self.results_path = r"C:\\Users\\EmirKISA\\Desktop\\Projects\\Symbolic Learning\\deepsym-senior-project\\runs\\train"
         self._get_exp_number()
@@ -139,6 +139,9 @@ class AE(object):
 
         test_loss /= len(self.test_loader.dataset)
         print('====> Test set loss: {:.4f}'.format(test_loss))
+
+        # Log the loss
+        self.writer.add_scalar('Test Loss', test_loss, epoch)
 
 
     def val(self):
