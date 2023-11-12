@@ -27,7 +27,7 @@ substantial academic contributions, with prospects of evolving into a conference
 signaling its significance in the academic and AI research communities.
 ## 2. Objectives
 In the ambitious realm of “Learning Symbolic Representations from Unsupervised 
-Interactions with the Environment,” this project is strategically poised with several clearcut objectives. Initially, the task is to not only implement the renowned DeepSym 
+Interactions with the Environment,” this project is strategically poised with several clear-cut objectives. Initially, the task is to not only implement the renowned DeepSym 
 methodology but also to enhance its capabilities, ensuring it remains at the forefront of 
 symbol learning. Recognizing the boundless potential of real-world simulations, the 
 project endeavors to immerse DeepSym within the vast, open-ended world of Minecraft, 
